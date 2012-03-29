@@ -157,6 +157,7 @@ let g:SuperTabDefaultCompletionType = "context"
 "autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m 
 
 au BufRead,BufNewFile *.py set expandtab
+au BufRead,BufNewFile *.rb set expandtab softtabstop=2 tabstop=2 shiftwidth=2
 
 "buffer explorer
 let g:miniBufExplMapWindowNavVim = 1 
