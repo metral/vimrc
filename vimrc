@@ -192,3 +192,6 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=\ %f%R%=%m[row\ %l/%L,\ column\ %v\ (%c)]
 autocmd bufwritepost .vimrc source $MYVIMRC
 
+" Neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
