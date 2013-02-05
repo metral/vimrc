@@ -194,5 +194,11 @@ set statusline+=\ %f%R%=%m[row\ %l/%L,\ column\ %v\ (%c)]
 autocmd bufwritepost .vimrc source $MYVIMRC
 
 " Neocomplcache
-let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_at_startup = 1
 
+"YouCompleteMe
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'Valloric/YouCompleteMe'
+filetype plugin indent on
