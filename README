@@ -1,10 +1,10 @@
 Installation
 
-    git clone git://github.com/metral/vimrc ~/.vim
+    git clone git://github.com/arangamani/vimrc ~/.vim
     cd ~/.vim
     git submodule init
     git submodule update
 
 Create symlink:
-    
+
     ln -s ~/.vim/vimrc ~/.vimrc
