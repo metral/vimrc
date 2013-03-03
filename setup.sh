@@ -8,7 +8,7 @@ then
     echo "Taking a backup of existing vim setup.."
     mv ~/.vim ~/.vim.$timestamp
 fi
-git clone git://github.com/arangamani/vimrc ~/.vim
+git clone git://github.com/metral/vimrc ~/.vim
 cd ~/.vim
 git submodule init
 git submodule update
