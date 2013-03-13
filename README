@@ -6,5 +6,5 @@ Installation
     git submodule update
 
 Create symlink:
-    
+
     ln -s ~/.vim/vimrc ~/.vimrc
