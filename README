@@ -8,3 +8,9 @@ Installation
 Create symlink:
 
     ln -s ~/.vim/vimrc ~/.vimrc
+
+
+
+OR via curl:
+
+curl -L http://git.io/iiq9dw | bash
