@@ -6,5 +6,11 @@ Installation
     git submodule update
 
 Create symlink:
-    
+
     ln -s ~/.vim/vimrc ~/.vimrc
+
+
+
+OR via curl:
+
+curl -L http://git.io/GPZgLg | bash
