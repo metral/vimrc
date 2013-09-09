@@ -233,7 +233,8 @@ if exists("+showtabline")
                     let file = substitute(file, '.*\/\ze.', '', '')
                 endif
             else
-                let file = fnamemodify(file, ':p:t')
+                "let file = fnamemodify(file, ':p:t')
+                let file = fnamemodify(file, ':p:h:t').'/'.fnamemodify(file, ':t')
             endif
             if file == ''
                 let file = '[No Name]'
