@@ -1,4 +1,4 @@
-let $VIMRUNTIME = "/usr/share/vim/vim*"
+let $VIMRUNTIME = "/usr/share/vim/vim74"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
 call pathogen#infect()
 filetype off
@@ -251,3 +251,9 @@ if exists("+showtabline")
     set showtabline=1
     highlight link TabNum Special
 endif
+
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'Valloric/YouCompleteMe'
+filetype plugin indent on
