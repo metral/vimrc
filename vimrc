@@ -257,3 +257,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'Valloric/YouCompleteMe'
 filetype plugin indent on
+
+let g:netrw_silent = 1
+set viminfo+=h
