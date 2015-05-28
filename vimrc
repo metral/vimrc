@@ -192,7 +192,7 @@ let g:syntastic_enable_signs=1
 "let g:syntastic_auto_loc_list=1
 
 set statusline+=%{fugitive#statusline()}
-set statusline+=\ %f%R%=%m[row\ %l/%L,\ column\ %v\ (%c)]
+set statusline+=\ %F%R%=%m[row\ %l/%L,\ column\ %v\ (%c)]
 autocmd bufwritepost .vimrc source $MYVIMRC
 
 " Neocomplcache
