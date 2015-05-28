@@ -13,7 +13,7 @@ cd ~/.vim
 git submodule init
 git submodule update
 
-pushd YouCompleteMe
+pushd bundle/YouCompleteMe
 ./install.sh --clang-completer
 popd
 
