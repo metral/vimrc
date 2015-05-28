@@ -198,13 +198,6 @@ autocmd bufwritepost .vimrc source $MYVIMRC
 " Neocomplcache
 "let g:neocomplcache_enable_at_startup = 1
 
-"YouCompleteMe
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'Valloric/YouCompleteMe'
-filetype plugin indent on
-
 " Rename tabs to show tab number.
 " (Based on http://stackoverflow.com/questions/5927952/whats-implementation-of-vims-default-tabline-function)
 if exists("+showtabline")

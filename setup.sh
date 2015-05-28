@@ -18,7 +18,7 @@ git submodule update --init --recursive
 ./install.sh --clang-completer
 popd
 
-vim +PluginInstall +qall
+vim +PluginInstall +qall now
 
 if [ -f ~/.vimrc ];
 then
