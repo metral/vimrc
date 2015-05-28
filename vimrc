@@ -261,3 +261,10 @@ call vundle#begin()
 Plugin 'fatih/vim-go'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"syntax-highlighting for Functions, Methods and Structs for golang vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
