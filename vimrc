@@ -245,11 +245,19 @@ if exists("+showtabline")
     highlight link TabNum Special
 endif
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"Bundle 'Valloric/YouCompleteMe'
-filetype plugin indent on
+"filetype off
+"set rtp+=~/.vim/bundle/vundle/
+""call vundle#rc()
+""Bundle 'Valloric/YouCompleteMe'
+"filetype plugin indent on
 
 let g:netrw_silent = 1
 set viminfo+=h
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'fatih/vim-go'
+call vundle#end()            " required
+filetype plugin indent on    " required
