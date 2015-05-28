@@ -11,9 +11,10 @@ fi
 git clone git://github.com/metral/vimrc ~/.vim
 cd ~/.vim
 git submodule init
-git submodule update --init --recursive
+git submodule update
 
 pushd bundle/YouCompleteMe
+git submodule update --init --recursive
 ./install.sh --clang-completer
 popd
 
