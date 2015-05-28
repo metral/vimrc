@@ -13,6 +13,12 @@ cd ~/.vim
 git submodule init
 git submodule update
 
+pushd YouCompleteMe
+./install.sh --clang-completer
+popd
+
+vim +PluginInstall +qall
+
 if [ -f ~/.vimrc ];
 then
     echo "Taking a backup of existing vimrc..."
