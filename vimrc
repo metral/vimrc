@@ -255,7 +255,7 @@ endif
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 filetype plugin indent on
 
 let g:netrw_silent = 1
