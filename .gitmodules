@@ -13,3 +13,6 @@
 [submodule "YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "golden-ratio"]
+	path = golden-ratio
+	url = https://github.com/roman/golden-ratio

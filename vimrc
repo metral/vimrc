@@ -259,6 +259,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'fatih/vim-go'
+Bundle 'roman/golden-ratio'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -268,3 +269,10 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+" Don't resize automatically.
+let g:golden_ratio_autocommand = 0
+"nmap <C-w>- <Plug>(golden_ratio_resize)
+" Fill screen with current window.
+"nnoremap <C-w>+ <C-w><Bar><C-w>_
+nnoremap <F7> :GoldenRatioToggle<CR>
