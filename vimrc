@@ -191,8 +191,13 @@ let g:syntastic_enable_signs=1
 "let g:syntastic_auto_jump=1
 "let g:syntastic_auto_loc_list=1
 
+function! WindowNumber()
+    let str=tabpagewinnr(tabpagenr())
+    return str
+endfunction
+
 set statusline+=%{fugitive#statusline()}
-set statusline+=\ %F%R%=%m[row\ %l/%L,\ column\ %v\ (%c)]
+set statusline+=\ %F%R%=%m[row:\ %l/%L,\ col:\ %v\ (%c),\ win:%{WindowNumber()}]
 autocmd bufwritepost .vimrc source $MYVIMRC
 
 " Neocomplcache
