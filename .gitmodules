@@ -16,3 +16,4 @@
 [submodule "bundle/golden-ratio"]
 	path = bundle/golden-ratio
 	url = https://github.com/roman/golden-ratio
+    ignore = dirty
