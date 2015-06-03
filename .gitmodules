@@ -13,7 +13,3 @@
 [submodule "YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "bundle/golden-ratio"]
-	path = bundle/golden-ratio
-	url = https://github.com/roman/golden-ratio
-    ignore = dirty
