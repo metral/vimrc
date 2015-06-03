@@ -281,3 +281,4 @@ let g:golden_ratio_autocommand = 0
 " Fill screen with current window.
 "nnoremap <C-w>+ <C-w><Bar><C-w>_
 nnoremap <F7> :GoldenRatioToggle<CR>
+hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
