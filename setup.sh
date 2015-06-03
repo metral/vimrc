@@ -2,22 +2,23 @@
 
 echo "Setting up vim..."
 
+apt-get update
+apt-get install git build-essential vim -y
+
 git clone git://github.com/metral/vimrc ~/.vim
 pushd ~/.vim
 git remote set-url origin git@github.com:metral/vimrc.git
 git submodule init
 git submodule update
 
+ln -s ~/.vim/vimrc ~/.vimrc
+
 pushd bundle/YouCompleteMe
 git submodule update --init --recursive
 ./install.sh --clang-completer
 popd
 
-vim +PluginInstall +qall now
-sleep 2
-vim +GoInstallBinaries +qall now
+vim +PluginInstall +GoInstallBinaries +qall now
 
-ln -s ~/.vim/vimrc ~/.vimrc
-
-echo "Completed setup of vim..."
+echo "Completed setup of vim."
 popd
