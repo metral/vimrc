@@ -4,6 +4,7 @@ echo "Setting up vim..."
 
 git clone git://github.com/metral/vimrc ~/.vim
 pushd ~/.vim
+git remote set-url origin git@github.com:metral/vimrc.git
 git submodule init
 git submodule update
 
