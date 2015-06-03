@@ -19,6 +19,7 @@ git submodule update --init --recursive
 popd
 
 vim +PluginInstall +qall now
+vim +GoInstallBinaries +qall now
 
 if [ -f ~/.vimrc ];
 then
