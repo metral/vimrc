@@ -2,8 +2,8 @@
 
 echo "Setting up vim..."
 
-apt-get update
-apt-get install git build-essential vim -y
+sudo apt-get update
+sudo apt-get install git build-essential vim -y
 
 git clone git://github.com/metral/vimrc ~/.vim
 pushd ~/.vim
