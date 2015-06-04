@@ -19,6 +19,4 @@ git submodule update --init --recursive
 popd
 
 vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
-
-echo "Completed setup of vim."
 popd
