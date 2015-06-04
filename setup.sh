@@ -3,7 +3,7 @@
 echo "Setting up vim..."
 
 sudo apt-get update
-sudo apt-get install git build-essential vim cmake python-dev python3-dev -y
+sudo apt-get install -y git build-essential vim cmake python-dev python3-dev < "/dev/null"
 
 git clone git://github.com/metral/vimrc ~/.vim
 pushd ~/.vim
