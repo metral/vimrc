@@ -265,6 +265,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'fatih/vim-go'
 Bundle 'roman/golden-ratio'
+Bundle 'gcmt/taboo.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -283,3 +284,6 @@ let g:golden_ratio_autocommand = 0
 "nnoremap <C-w>+ <C-w><Bar><C-w>_
 nnoremap <F7> :GoldenRatioToggle<CR>
 hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+
+" Taboo save tab names
+set sessionoptions+=tabpages,globals
