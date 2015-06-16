@@ -288,3 +288,6 @@ hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
 
 " Taboo save tab names
 set sessionoptions+=tabpages,globals
+
+" automatically run the command (au is short for autocmd) :redraw! when I get the event FocusGained for any file matching the pattern *'.
+au FocusGained * :redraw!
