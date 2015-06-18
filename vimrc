@@ -295,3 +295,5 @@ let g:taboo_renamed_tab_format =
 
 " automatically run the command (au is short for autocmd) :redraw! when I get the event FocusGained for any file matching the pattern *'.
 au FocusGained * :redraw!
+
+nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
