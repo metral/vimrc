@@ -188,12 +188,28 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_enable_signs=1
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 "let g:syntastic_auto_jump=1
 "let g:syntastic_auto_loc_list=1
 "let g:syntastic_mode_map = {
 "        \ "mode": "active",
 "        \ "active_filetypes": [],
 "        \ "passive_filetypes": ["go"] }
+
+function! ToggleErrors()
+    if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
+        " No location/quickfix list shown, open syntastic error location panel
+        Errors
+    else
+        lclose
+    endif
+endfunction
+nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
 function! WindowNumber()
     let str=tabpagewinnr(tabpagenr())
