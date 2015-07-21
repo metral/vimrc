@@ -216,10 +216,6 @@ function! WindowNumber()
     return str
 endfunction
 
-set statusline+=%{fugitive#statusline()}
-set statusline+=\ %F%R%=%m[row:\ %l/%L,\ col:\ %v\ (%c),\ win:%{WindowNumber()}]
-autocmd bufwritepost .vimrc source $MYVIMRC
-
 " Neocomplcache
 "let g:neocomplcache_enable_at_startup = 1
 
@@ -287,8 +283,17 @@ Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
 Bundle 'roman/golden-ratio'
 Bundle 'gcmt/taboo.vim'
+Plugin 'bling/vim-airline'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_y='win: %{WindowNumber()}'
+
+"set statusline+=%{fugitive#statusline()}
+set statusline+=\ %F%R%=%m[row:\ %l/%L,\ col:\ %v\ (%c),\ win:%{WindowNumber()}]
+autocmd bufwritepost .vimrc source $MYVIMRC
 
 "syntax-highlighting for Functions, Methods and Structs for golang vim-go
 let g:go_highlight_functions = 1
