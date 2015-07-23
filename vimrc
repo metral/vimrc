@@ -189,17 +189,16 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_enable_signs=1
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list=0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 
-"let g:syntastic_auto_jump=1
-"let g:syntastic_auto_loc_list=1
 "let g:syntastic_mode_map = {
 "        \ "mode": "active",
 "        \ "active_filetypes": [],
 "        \ "passive_filetypes": ["go"] }
+
 
 function! ToggleErrors()
     if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
@@ -284,6 +283,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Bundle 'roman/golden-ratio'
 Bundle 'gcmt/taboo.vim'
 Plugin 'bling/vim-airline'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -322,3 +322,6 @@ let g:taboo_renamed_tab_format =
 au FocusGained * :redraw!
 
 nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
+
+"autocmd BufWritePre *.go call go#lint#Run()
+"autocmd BufWritePre *.go call go#errcheck#Run()
