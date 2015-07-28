@@ -15,7 +15,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 
 pushd bundle/YouCompleteMe
 git submodule update --init --recursive
-./install.sh --clang-completer
+./install.sh --clang-completer --gocode-completer
 popd
 
 vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
