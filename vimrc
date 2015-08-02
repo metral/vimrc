@@ -1,6 +1,6 @@
 "let $VIMRUNTIME = "/usr/share/vim/vim74"
 "set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
-call pathogen#infect()
+execute pathogen#infect()
 filetype off
 filetype plugin indent on
 set nocompatible
@@ -193,6 +193,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+let g:syntastic_go_checkers = ['go']
 
 "let g:syntastic_mode_map = {
 "        \ "mode": "active",
