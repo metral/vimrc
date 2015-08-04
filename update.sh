@@ -5,4 +5,7 @@ git add .
 git commit -m "Submodule sync"
 git push
 
-vim +PluginInstall! +GoInstallBinaries! +qall now > /dev/null 2>&1
+#vim +PluginInstall! +GoInstallBinaries! +qall now > /dev/null 2>&1
+vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +qall > /dev/null
+
+./build_ycm.sh
