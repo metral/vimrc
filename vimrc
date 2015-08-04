@@ -281,6 +281,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'Valloric/YouCompleteMe'
 Bundle 'roman/golden-ratio'
 Bundle 'gcmt/taboo.vim'
 Plugin 'bling/vim-airline'
