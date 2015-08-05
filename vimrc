@@ -281,10 +281,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Bundle 'roman/golden-ratio'
 Bundle 'gcmt/taboo.vim'
 Plugin 'bling/vim-airline'
+Plugin 'Shougo/neocomplete'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -304,6 +305,14 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
+
+"let g:ycm_server_keep_logfiles
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#max_list = 15
+setlocal omnifunc=gocode#Complete
 
 " Don't resize automatically.
 let g:golden_ratio_autocommand = 0
