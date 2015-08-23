@@ -286,6 +286,7 @@ Bundle 'roman/golden-ratio'
 Bundle 'gcmt/taboo.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/neocomplete'
+Plugin 'Scrooloose/nerdtree'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 call vundle#end()            " required
 filetype plugin indent on    " required
