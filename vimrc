@@ -288,6 +288,8 @@ Plugin 'bling/vim-airline'
 Plugin 'Shougo/neocomplete'
 Plugin 'Scrooloose/nerdtree'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -314,6 +316,9 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#max_list = 15
 setlocal omnifunc=gocode#Complete
+
+
+let g:jsx_ext_required = 0
 
 " Don't resize automatically.
 let g:golden_ratio_autocommand = 0
