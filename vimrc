@@ -62,7 +62,7 @@ map <F3> :TlistToggle<cr>
 "let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 35 
 "autocmd BufWinEnter * NERDTreeMirror
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore = ['\.pyc$','\.o$']
 " line indent
 nmap <D-[> <<
@@ -351,3 +351,4 @@ nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 "autocmd BufWritePre *.go call go#lint#Run()
 "autocmd BufWritePre *.go call go#errcheck#Run()
 
+runtime vim-unbundle/plugin/unbundle.vim
