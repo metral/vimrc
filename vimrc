@@ -55,8 +55,14 @@ endif
 
 
 map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-map <F2> :NERDTreeToggle<cr>
+map <F2> :NERDTreeTabsToggle<cr>
 map <F3> :TlistToggle<cr>
+"let g:NERDTreeDirArrows = 1
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeWinSize = 35 
+"autocmd BufWinEnter * NERDTreeMirror
+let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore = ['\.pyc$','\.o$']
 " line indent
 nmap <D-[> <<
@@ -285,6 +291,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 "Plugin 'Valloric/YouCompleteMe'
 Bundle 'roman/golden-ratio'
 Bundle 'gcmt/taboo.vim'
+Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/neocomplete'
 Plugin 'Scrooloose/nerdtree'
@@ -343,3 +350,4 @@ nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 
 "autocmd BufWritePre *.go call go#lint#Run()
 "autocmd BufWritePre *.go call go#errcheck#Run()
+
