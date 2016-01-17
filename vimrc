@@ -55,7 +55,7 @@ endif
 
 
 map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-map <F2> :NERDTreeTabsToggle<cr>
+map <F2> :NERDTreeTabsToggle <cr>
 map <F3> :TlistToggle<cr>
 "let g:NERDTreeDirArrows = 1
 "let g:NERDTreeDirArrowExpandable = '▸'
