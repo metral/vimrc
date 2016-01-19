@@ -1,6 +1,10 @@
 #!/bin/bash
 
 git submodule update --remote --recursive
+
+git submodule foreach git pull origin master
+for i in ~/.vim/bundle/*; do git -C $i pull; done
+
 git add .
 git commit -m "Submodule sync"
 git push
