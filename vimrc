@@ -200,13 +200,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
-let g:syntastic_go_checkers = ['go']
+"let g:syntastic_go_checkers = ['go']
 
 "let g:syntastic_mode_map = {
 "        \ "mode": "active",
 "        \ "active_filetypes": [],
 "        \ "passive_filetypes": ["go"] }
 
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 function! ToggleErrors()
     if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
@@ -313,9 +315,11 @@ autocmd bufwritepost .vimrc source $MYVIMRC
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
+let g:go_bin_path = "/mystore/mike/go"
 
 "let g:ycm_server_keep_logfiles
 
