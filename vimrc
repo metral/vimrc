@@ -207,8 +207,9 @@ let g:syntastic_check_on_wq = 1
 "        \ "active_filetypes": [],
 "        \ "passive_filetypes": ["go"] }
 
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
+let g:syntastic_go_checkers = ['go']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 function! ToggleErrors()
     if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
@@ -296,6 +297,7 @@ Bundle 'gcmt/taboo.vim'
 Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/neocomplete'
+"Plugin 'Shougo/echodoc.vim'
 Plugin 'Scrooloose/nerdtree'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
@@ -320,15 +322,28 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = "/mystore/mike/go"
+au FileType go nmap <leader>b <Plug>(go-build)
 
 "let g:ycm_server_keep_logfiles
 
+let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#max_list = 15
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#enable_auto_select = 0
+"let g:echodoc_enable_at_startup = 1
+"let g:neocomplete#max_list = 15
+set cmdheight=2
+set completeopt+=menuone
+set completeopt-=preview
 setlocal omnifunc=gocode#Complete
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+let g:neocomplete#sources#omni#input_patterns = {}
+endif
 
+" golang fix
+let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
 let g:jsx_ext_required = 0
 
