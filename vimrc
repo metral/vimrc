@@ -152,11 +152,11 @@ set foldlevel=1         " set default fold level to 1
 
 
 " Rebind autocomplete to ctrl-space
-" inoremap <Nul> <C-x><C-o> 
+"inoremap <Nul> <C-x><C-o> 
 
 " Super tab
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"let g:SuperTabDefaultCompletionType = "context"
 "highlight Pmenu guibg=brown gui=bold
 "highlight Pmenu ctermbg=238 gui=bold
 " Add tags
@@ -344,6 +344,14 @@ endif
 
 " golang fix
 let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+    " For no inserting <CR> key.
+    "   "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+"   " <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:jsx_ext_required = 0
 
