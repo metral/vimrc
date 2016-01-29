@@ -49,4 +49,11 @@ ln -s ~/.vim/vimrc ~/.vimrc
 #popd
 
 vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
+
+echo "alias vi='vim'" >> ~/.bashrc
+
+echo ""
+echo "********************************"
+echo " Source ~/.bashrc"
+echo "********************************"
 popd
