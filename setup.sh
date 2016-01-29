@@ -37,6 +37,9 @@ sudo make install
 git clone git://github.com/metral/vimrc ~/.vim
 pushd ~/.vim
 git remote set-url origin git@github.com:metral/vimrc.git
+
+git clone https://github.com/sunaku/vim-unbundle.git ~/.vim/vim-unbundle
+
 git submodule init
 git submodule update
 
