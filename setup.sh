@@ -33,9 +33,6 @@ sudo make distclean
             --with-lua-prefix=/usr/include/lua5.1
 sudo make -j4 VIMRUNTIMEDIR=/usr/share/vim/vim74
 sudo make install
-popd
-popd
-rm -rf ~/vim
 
 git clone git://github.com/metral/vimrc ~/.vim
 pushd ~/.vim
@@ -62,4 +59,6 @@ echo "********************************"
 echo " Source ~/.bashrc"
 echo "********************************"
 popd
+
+rm -rf ~/vim
 
