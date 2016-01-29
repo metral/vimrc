@@ -10,7 +10,9 @@ sudo apt-get -y install liblua5.1-dev luajit libluajit-5.1 < "/dev/null"
 
 # Remove old vims
 sudo apt-get -y remove vim vim-runtime gvim < "/dev/null"
+
 sudo apt-get -y remove vim-tiny vim-common vim-gui-common < "/dev/null"
+
 sudo rm -rf /usr/local/bin/vim /usr/bin/vim
 
 sudo mkdir /usr/include/lua5.1/include
@@ -57,3 +59,4 @@ echo "********************************"
 echo " Source ~/.bashrc"
 echo "********************************"
 popd
+
