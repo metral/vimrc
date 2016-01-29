@@ -34,7 +34,7 @@ sudo make distclean
 sudo make -j4 VIMRUNTIMEDIR=/usr/share/vim/vim74
 sudo make install
 
-git clone git@github.com:metral/vimrc.git ~/.vim
+git clone https://github.com/metral/vimrc.git ~/.vim
 pushd ~/.vim
 git clone https://github.com/sunaku/vim-unbundle.git vim-unbundle
 
