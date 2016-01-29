@@ -321,7 +321,7 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
-let g:go_bin_path = "~/go"
+"let g:go_bin_path = "/go"
 au FileType go nmap <leader>b <Plug>(go-build)
 
 "let g:ycm_server_keep_logfiles
