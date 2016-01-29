@@ -51,7 +51,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 #popd
 
 #vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
-vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +qall > /dev/null
+vim -E -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
 
 rm -rf ~/vim
 
@@ -61,5 +61,6 @@ echo ""
 echo "********************************"
 echo " Source ~/.bashrc"
 echo "********************************"
+
 popd
 
