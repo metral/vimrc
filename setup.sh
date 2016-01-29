@@ -6,11 +6,11 @@ sudo apt-get update
 sudo apt-get install -y git build-essential vim-nox cmake python-dev python3-dev < "/dev/null"
 
 # Install lua from binaries
-sudo apt-get install liblua5.1-dev luajit libluajit-5.1 -y
+sudo apt-get install liblua5.1-dev luajit libluajit-5.1 -y < "/dev/null"
 
 # Remove old vims
-sudo apt-get remove vim vim-runtime gvim -y
-sudo apt-get remove vim-tiny vim-common vim-gui-common -y
+sudo apt-get remove vim vim-runtime gvim -y < "/dev/null"
+sudo apt-get remove vim-tiny vim-common vim-gui-common -y < "/dev/null"
 sudo rm -rf /usr/local/bin/vim /usr/bin/vim
 
 sudo mkdir /usr/include/lua5.1/include
