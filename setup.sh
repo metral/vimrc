@@ -51,7 +51,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 #popd
 
 #vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
-vim -E -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall < "/dev/null"
+#vim -E -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
 
 rm -rf ~/vim
 
