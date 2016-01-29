@@ -36,7 +36,7 @@ sudo make install
 
 git clone git://github.com/metral/vimrc ~/.vim
 pushd ~/.vim
-git remote set-url origin git@github.com:metral/vimrc.git
+git remote set-url origin https://github.com/metral/vimrc.git
 
 git clone https://github.com/sunaku/vim-unbundle.git vim-unbundle
 
