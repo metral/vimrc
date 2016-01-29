@@ -11,4 +11,4 @@ git push
 
 #vim +PluginInstall! +GoInstallBinaries! +qall now > /dev/null 2>&1
 #vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +qall > /dev/null
-vim -E -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
+vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
