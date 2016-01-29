@@ -34,6 +34,7 @@ sudo make distclean
 sudo make -j4 VIMRUNTIMEDIR=/usr/share/vim/vim74
 sudo make install
 popd
+popd
 rm -rf ~/vim
 
 git clone git://github.com/metral/vimrc ~/.vim
