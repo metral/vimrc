@@ -38,7 +38,7 @@ git clone git://github.com/metral/vimrc ~/.vim
 pushd ~/.vim
 git remote set-url origin git@github.com:metral/vimrc.git
 
-git clone https://github.com/sunaku/vim-unbundle.git ~/.vim/vim-unbundle
+git clone https://github.com/sunaku/vim-unbundle.git vim-unbundle
 
 git submodule init
 git submodule update
@@ -51,7 +51,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 #popd
 
 #vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
-vim -E -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
+vim -E -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall < "/dev/null"
 
 rm -rf ~/vim
 
