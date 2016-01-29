@@ -50,7 +50,10 @@ ln -s ~/.vim/vimrc ~/.vimrc
 #./install.sh --clang-completer --gocode-completer
 #popd
 
-vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
+#vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
+vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +qall > /dev/null
+
+rm -rf ~/vim
 
 echo "alias vi='vim'" >> ~/.bashrc
 
@@ -59,6 +62,4 @@ echo "********************************"
 echo " Source ~/.bashrc"
 echo "********************************"
 popd
-
-rm -rf ~/vim
 
