@@ -352,6 +352,8 @@ function! s:my_cr_function()
 endfunction
 "   " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"Space to select item:
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 let g:jsx_ext_required = 0
 
