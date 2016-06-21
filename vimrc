@@ -36,6 +36,7 @@ set backspace=indent,eol,start
 set showmode
 set scrolloff=3
 set laststatus=2
+set splitright
 
 " These are annoying and I never use them anyway
 set nobackup
