@@ -60,6 +60,7 @@ map <F2> :NERDTreeTabsToggle <cr>
 map <F3> :TlistToggle<cr>
 noremap <F5> :NeoCompleteEnable<cr>
 noremap <F6> :NeoCompleteDisable<cr>
+"nnoremap <F8> :set ft=ansible<CR>
 "let g:NERDTreeDirArrows = 1
 "let g:NERDTreeDirArrowExpandable = '▸'
 "let g:NERDTreeDirArrowCollapsible = '▾'
@@ -111,7 +112,9 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 " for C-like programming, have automatic indentation:
 autocmd FileType c,cpp,slang set cindent expandtab shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType yml,yaml set cindent expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+" for yaml & ansible
+autocmd FileType yaml set cindent expandtab shiftwidth=2 tabstop=2 softtabstop=2 ft=ansible
 
 " for actual C (not C++) programming where comments have explicit end
 " characters, if starting a new line in the middle of a comment automatically
@@ -305,8 +308,13 @@ Plugin 'Scrooloose/nerdtree'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'pearofducks/ansible-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+let g:ansible_attribute_highlight = "ob"
+let g:ansible_name_highlight = 'd'
+let g:ansible_extra_keywords_highlight = 1
 
 "vim-airline
 let g:airline#extensions#tabline#enabled = 1
