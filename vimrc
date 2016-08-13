@@ -193,7 +193,7 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-
+"set completeopt=menuone,menu
 
 " Syntastic
 "SyntasticDisable
@@ -203,19 +203,24 @@ set statusline+=%*
 let g:syntastic_enable_signs=1
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list=0
-let g:syntastic_check_on_open = 0
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-"let g:syntastic_go_checkers = ['go']
 
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+
+"let g:syntastic_go_checkers = ['go']
 "let g:syntastic_mode_map = {
 "        \ "mode": "active",
 "        \ "active_filetypes": [],
 "        \ "passive_filetypes": ["go"] }
-
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
-let g:syntastic_go_checkers = ['go']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"
+"let g:syntastic_mode_map = {
+"        \ "mode": "active",
+"        \ "active_filetypes": [],
+"        \ "passive_filetypes": ["go"] }
 
 function! ToggleErrors()
     if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
@@ -327,30 +332,50 @@ autocmd bufwritepost .vimrc source $MYVIMRC
 "syntax-highlighting for Functions, Methods and Structs for golang vim-go
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_interfaces = 1
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = "/mystore/mike/go/src/bin"
+au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
 
 "let g:ycm_server_keep_logfiles
 
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 0
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <C-n> pumvisible() ? '<C-n>' : 
+"           \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"           \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+set pumheight=10
+
+"let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#enable_auto_select = 0
-"let g:echodoc_enable_at_startup = 1
-"let g:neocomplete#max_list = 15
+let g:echodoc_enable_at_startup = 1
+let g:neocomplete#max_list = 15
+
+"if !exists('g:neocomplete#sources')
+"    let g:neocomplete#sources = {}
+"endif
+"let g:neocomplete#sources._ = ['buffer', 'member', 'tag', 'file', 'dictionary']
+"let g:neocomplete#sources.go = ['omni']
+
 set cmdheight=2
-set completeopt+=menuone
-set completeopt-=preview
 setlocal omnifunc=gocode#Complete
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
 " golang fix
