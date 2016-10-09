@@ -99,7 +99,7 @@ autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 
 
 " Turn on autocomplete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " display the current mode and partially-typed commands in the status line:
 set showmode
@@ -365,7 +365,7 @@ let g:neocomplete#max_list = 15
 "let g:neocomplete#sources.go = ['omni']
 
 set cmdheight=2
-setlocal omnifunc=gocode#Complete
+setlocal omnifunc=go#code#Complete
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
