@@ -13,7 +13,7 @@ sudo apt-get -y remove vim vim-runtime gvim < "/dev/null"
 
 sudo apt-get -y remove vim-tiny vim-common vim-gui-common < "/dev/null"
 
-sudo rm -rf /usr/local/bin/vim /usr/bin/vim
+rm -rf /usr/local/bin/vim /usr/bin/vim
 
 sudo mkdir /usr/include/lua5.1/include
 sudo mv /usr/include/lua5.1/*.h /usr/include/lua5.1/include/
@@ -21,7 +21,7 @@ sudo mv /usr/include/lua5.1/*.h /usr/include/lua5.1/include/
 git clone https://github.com/vim/vim ~/vim
 pushd ~/vim
 pushd src
-sudo make distclean
+make distclean
 ./configure --with-features=huge \
             --enable-rubyinterp \
             --enable-pythoninterp \
