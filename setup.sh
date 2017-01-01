@@ -31,7 +31,7 @@ make distclean
             --enable-luainterp \
             --with-luajit \
             --with-lua-prefix=/usr/include/lua5.1
-sudo make -j4 VIMRUNTIMEDIR=/usr/share/vim/vim74
+make -j4 VIMRUNTIMEDIR=/usr/share/vim/vim74
 sudo make install
 
 git clone https://github.com/metral/vimrc.git ~/.vim
