@@ -1,5 +1,5 @@
-"let $VIMRUNTIME = "/usr/share/vim/vim74"
-"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
+let $VIMRUNTIME = "/usr/share/vim/vim80"
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
 execute pathogen#infect()
 filetype off
 filetype plugin indent on
