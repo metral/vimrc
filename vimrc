@@ -298,6 +298,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 "Plugin 'Valloric/YouCompleteMe'
 Bundle 'roman/golden-ratio'
 Bundle 'gcmt/taboo.vim'
+Bundle "lepture/vim-jinja"
 Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Shougo/neocomplete'
