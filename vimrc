@@ -331,7 +331,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_interfaces = 1
 let g:go_fmt_command = "goimports"
-let g:go_bin_path = "/mystore/mike/go/bin"
+let g:go_bin_path = "/home/metral/go/bin"
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
