@@ -36,7 +36,7 @@ sudo make install
 
 git clone https://github.com/metral/vimrc.git ~/.vim
 pushd ~/.vim
-git clone https://github.com/sunaku/vim-unbundle.git vim-unbundle
+#git clone https://github.com/sunaku/vim-unbundle.git vim-unbundle
 
 git submodule init
 git submodule update
@@ -61,4 +61,3 @@ echo " Source ~/.bashrc"
 echo "********************************"
 
 popd
-
