@@ -51,8 +51,6 @@ ln -s ~/.vim/vimrc ~/.vimrc
 #vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
 #vim -E -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
 
-sudo rm -rf ~/vim
-
 echo "alias vi='vim'" >> ~/.bashrc
 
 echo ""
@@ -61,3 +59,4 @@ echo " Source ~/.bashrc"
 echo "********************************"
 
 popd
+sudo rm -rf ~/vim
