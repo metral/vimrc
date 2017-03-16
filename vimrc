@@ -61,12 +61,12 @@ map <F3> :TlistToggle<cr>
 noremap <F5> :NeoCompleteEnable<cr>
 noremap <F6> :NeoCompleteDisable<cr>
 "nnoremap <F8> :set ft=ansible<CR>
-"let g:NERDTreeDirArrows = 1
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 35 
 "autocmd BufWinEnter * NERDTreeMirror
-"let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore = ['\.pyc$','\.o$']
 " line indent
 nmap <D-[> <<
@@ -301,6 +301,8 @@ Bundle 'gcmt/taboo.vim'
 Bundle "lepture/vim-jinja"
 Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
+Plugin 'majutsushi/tagbar'
+Plugin 'thaerkh/vim-workspace'
 Plugin 'Shougo/neocomplete'
 "Plugin 'Shougo/echodoc.vim'
 Plugin 'Scrooloose/nerdtree'
@@ -418,3 +420,12 @@ nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 "autocmd BufWritePre *.go call go#errcheck#Run()
 
 runtime vim-unbundle/plugin/unbundle.vim
+
+"By default the mapping gd is enabled, which opens the target identifier in current buffer. You can also open the definition/declaration, in a new vertical, horizontal, or tab, for the word under your cursor:
+au FileType go nmap <leader>gs <Plug>(go-def-split)
+au FileType go nmap <leader>gv <Plug>(go-def-vertical)
+au FileType go nmap <leader>gt <Plug>(go-def-tab)
+
+"settings for https://github.com/thaerkh/vim-workspace
+let g:workspace_autosave_untrailspaces = 0
+let g:workspace_autosave_ignore = ['gitcommit']
