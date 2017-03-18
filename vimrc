@@ -57,11 +57,11 @@ endif
 
 map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 map <F2> :NERDTreeTabsToggle <cr>
-map <F3> :TlistToggle<cr>
-noremap <F5> :NeoCompleteEnable<cr>
-noremap <F6> :NeoCompleteDisable<cr>
-map <F8> :Tagbar <cr>
-"nnoremap <F8> :set ft=ansible<CR>
+map <F3> :ToggleWorkspace<cr>
+"map <F4> :NeoCompleteToggle<cr>
+map <F4> :Tagbar <cr>
+
+" NERDTree settings
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
