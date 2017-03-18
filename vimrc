@@ -57,9 +57,9 @@ endif
 
 map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 map <F2> :NERDTreeTabsToggle <cr>
-map <F3> :ToggleWorkspace<cr>
 "map <F4> :NeoCompleteToggle<cr>
-map <F4> :Tagbar <cr>
+map <F3> :Tagbar <cr>
+map <F8> :ToggleWorkspace<cr>
 
 " NERDTree settings
 let g:NERDTreeDirArrows = 1
@@ -424,9 +424,9 @@ nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 runtime vim-unbundle/plugin/unbundle.vim
 
 "By default the mapping gd is enabled, which opens the target identifier in current buffer. You can also open the definition/declaration, in a new vertical, horizontal, or tab, for the word under your cursor:
-au FileType go nmap <leader>gs <Plug>(go-def-split)
-au FileType go nmap <leader>gv <Plug>(go-def-vertical)
-au FileType go nmap <leader>gt <Plug>(go-def-tab)
+au FileType go nmap <C-g>gs <Plug>(go-def-split)
+au FileType go nmap <C-g>gv <Plug>(go-def-vertical)
+au FileType go nmap <C-g>gt <Plug>(go-def-tab)
 
 "settings for https://github.com/thaerkh/vim-workspace
 let g:workspace_autosave_untrailspaces = 0
