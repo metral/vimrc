@@ -60,11 +60,14 @@ map <F2> :NERDTreeTabsToggle <cr>
 map <F3> :TlistToggle<cr>
 noremap <F5> :NeoCompleteEnable<cr>
 noremap <F6> :NeoCompleteDisable<cr>
+map <F8> :Tagbar <cr>
 "nnoremap <F8> :set ft=ansible<CR>
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 35 
+let g:NERDTreeGlyphReadOnly = "RO"
+
 "autocmd BufWinEnter * NERDTreeMirror
 let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore = ['\.pyc$','\.o$']
@@ -191,7 +194,7 @@ set completeopt=menuone,menu
 " Syntastic
 "SyntasticDisable
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_enable_signs=1
 
@@ -295,7 +298,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
-"Plugin 'Valloric/YouCompleteMe'
 Bundle 'roman/golden-ratio'
 Bundle 'gcmt/taboo.vim'
 Bundle "lepture/vim-jinja"
@@ -304,7 +306,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'thaerkh/vim-workspace'
 Plugin 'Shougo/neocomplete'
-"Plugin 'Shougo/echodoc.vim'
+Plugin 'Yggdroot/indentLine'
 Plugin 'Scrooloose/nerdtree'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
@@ -429,3 +431,7 @@ au FileType go nmap <leader>gt <Plug>(go-def-tab)
 "settings for https://github.com/thaerkh/vim-workspace
 let g:workspace_autosave_untrailspaces = 0
 let g:workspace_autosave_ignore = ['gitcommit']
+
+"settings for usage with https://github.com/Yggdroot/indentLine
+set listchars=tab:\|\ 
+set list
