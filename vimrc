@@ -439,3 +439,5 @@ let g:workspace_autosave_ignore = ['gitcommit']
 "settings for usage with https://github.com/Yggdroot/indentLine
 set listchars=tab:\|\ 
 set list
+
+let g:indentLine_enabled = 0
