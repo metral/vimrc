@@ -60,3 +60,5 @@ echo "********************************"
 
 popd
 sudo rm -rf ~/vim
+
+ps aux | grep gocode | awk '{print $2}' | xargs kill -9 ; gocode set autobuild true; gocode
