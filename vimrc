@@ -59,6 +59,8 @@ map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 map <F2> :NERDTreeTabsToggle <cr>
 "map <F4> :NeoCompleteToggle<cr>
 map <F3> :Tagbar <cr>
+
+map <F7> :GoldenRatioToggle<CR>
 map <F8> :ToggleWorkspace<cr>
 
 " NERDTree settings
@@ -403,7 +405,6 @@ let g:golden_ratio_autocommand = 0
 "nmap <C-w>- <Plug>(golden_ratio_resize)
 " Fill screen with current window.
 "nnoremap <C-w>+ <C-w><Bar><C-w>_
-nnoremap <F7> :GoldenRatioToggle<CR>
 hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
 
 " Taboo save tab names
