@@ -71,7 +71,7 @@ let g:NERDTreeWinSize = 35
 let g:NERDTreeGlyphReadOnly = "RO"
 
 "autocmd BufWinEnter * NERDTreeMirror
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore = ['\.pyc$','\.o$']
 " line indent
 nmap <D-[> <<
