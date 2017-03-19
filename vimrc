@@ -454,6 +454,7 @@ function! ToggleIndentOff()
     set nolist
     let g:toggleindent = 0
 endfunction
+call ToggleIndentOff()
 
 " add live column + line cross-hair cursor tracking
 set cursorcolumn
