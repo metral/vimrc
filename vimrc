@@ -317,6 +317,9 @@ Plugin 'pearofducks/ansible-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" dont indent line on start
+let g:indentLine_enabled = 0
+
 let g:ansible_attribute_highlight = "ob"
 let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
