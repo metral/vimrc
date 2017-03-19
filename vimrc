@@ -59,6 +59,7 @@ map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 map <F2> :NERDTreeTabsToggle <cr>
 "map <F4> :NeoCompleteToggle<cr>
 map <F3> :Tagbar <cr>
+map <F4> :call ToggleIndent()<cr>
 
 map <F7> :GoldenRatioToggle<CR>
 map <F8> :ToggleWorkspace<cr>
@@ -308,7 +309,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'thaerkh/vim-workspace'
 Plugin 'Shougo/neocomplete'
-Plugin 'Yggdroot/indentLine'
 Plugin 'Scrooloose/nerdtree'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
@@ -316,9 +316,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'pearofducks/ansible-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" dont indent line on start
-let g:indentLine_enabled = 0
 
 let g:ansible_attribute_highlight = "ob"
 let g:ansible_name_highlight = 'd'
@@ -436,8 +433,28 @@ au FileType go nmap <C-g>gt <Plug>(go-def-tab)
 let g:workspace_autosave_untrailspaces = 0
 let g:workspace_autosave_ignore = ['gitcommit']
 
-"settings for usage with https://github.com/Yggdroot/indentLine
+" toggle indent using vim conceal
+let g:toggleindent = 0
+function! ToggleIndent()
+    if g:toggleindent
+        call ToggleIndentOff()
+    else
+        call ToggleIndentOn()
+    endif
+endfunction
 
-let g:indentLine_enabled = 0
-set listchars=tab:\|\ 
-set list
+function! ToggleIndentOn()
+    set listchars=tab:\┆\ 
+    set list
+    let g:toggleindent = 1
+endfunction
+
+function! ToggleIndentOff()
+    set listchars=eol:$
+    set nolist
+    let g:toggleindent = 0
+endfunction
+
+" add live column + line cross-hair cursor tracking
+set cursorcolumn
+set cursorline
