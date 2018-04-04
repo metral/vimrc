@@ -120,7 +120,9 @@ au BufNewFile,BufRead *.ejs set filetype=html
 autocmd FileType c,cpp,slang set cindent expandtab shiftwidth=4 tabstop=4 softtabstop=4
 
 " for yaml & ansible
-autocmd FileType yaml set cindent expandtab shiftwidth=2 tabstop=2 softtabstop=2 ft=ansible
+"autocmd FileType yaml set cindent expandtab shiftwidth=2 tabstop=2 softtabstop=2 ft=ansible
+
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
 
 " for actual C (not C++) programming where comments have explicit end
 " characters, if starting a new line in the middle of a comment automatically
