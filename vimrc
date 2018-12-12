@@ -316,6 +316,7 @@ Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'leafgarland/typescript-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
