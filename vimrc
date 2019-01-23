@@ -312,7 +312,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'thaerkh/vim-workspace'
 Plugin 'Shougo/neocomplete'
 Plugin 'Scrooloose/nerdtree'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
+"Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'stamblerre/gocode', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'pearofducks/ansible-vim'
