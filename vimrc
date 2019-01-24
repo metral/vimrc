@@ -194,8 +194,8 @@ set completefunc=syntaxcomplete#Complete
 "let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-"set completeopt=menuone,menu,longest,preview
-set completeopt=menuone,menu
+set completeopt=menuone,menu,longest,preview
+"set completeopt=menuone,menu
 
 " Syntastic
 "SyntasticDisable
@@ -361,6 +361,8 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 "           \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:tsuquyomi_completion_detail = 1
+autocmd FileType typescript setlocal completeopt+=menu,preview
 set pumheight=10
 
 "let g:acp_enableAtStartup = 0
