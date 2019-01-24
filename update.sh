@@ -15,4 +15,5 @@ vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +
 rm -rf $GOPATH/bin/gomod
 ps aux | grep gocode-gomod | awk '{print $2}' | xargs kill -9
 ps aux | grep gocode | awk '{print $2}' | xargs kill -9
-gocode-gomod set autobuild true; gocode-gomod
+go get -u github.com/stamblerre/gocode
+gocode close
