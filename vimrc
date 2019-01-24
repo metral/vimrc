@@ -183,6 +183,7 @@ let g:miniBufExplModSelTarget = 1
 
 " Omnicomplete
 "set ofu=syntaxcomplete#Complete
+set completefunc=syntaxcomplete#Complete
 "let OmniCpp_NamespaceSearch = 1
 "let OmniCpp_GlobalScopeSearch = 1
 "let OmniCpp_ShowAccess = 1
