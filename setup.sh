@@ -13,7 +13,7 @@ sudo apt-get -y remove vim vim-runtime gvim < "/dev/null"
 
 sudo apt-get -y remove vim-tiny vim-common vim-gui-common < "/dev/null"
 
-rm -rf /usr/local/bin/vim /usr/bin/vim
+sudo rm -rf /usr/local/bin/vim /usr/bin/vim
 
 sudo mkdir /usr/include/lua5.1/include
 sudo mv /usr/include/lua5.1/*.h /usr/include/lua5.1/include/
@@ -62,4 +62,7 @@ echo "********************************"
 popd
 sudo rm -rf ~/vim
 
-ps aux | grep gocode | awk '{print $2}' | xargs kill -9 ; gocode set autobuild true; gocode
+rm -rf $GOPATH/bin/gomod
+ps aux | grep gocode-gomod | awk '{print $2}' | xargs kill -9
+ps aux | grep gocode | awk '{print $2}' | xargs kill -9
+gocode-gomod set autobuild true; gocode-gomod
