@@ -360,6 +360,7 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 "inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "           \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 set pumheight=10
 
 "let g:acp_enableAtStartup = 0
