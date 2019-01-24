@@ -48,8 +48,6 @@ ln -s ~/.vim/vimrc ~/.vimrc
 #./install.sh --clang-completer --gocode-completer
 #popd
 
-#vim +PluginInstall +GoInstallBinaries +qall > /dev/null 2>&1
-#vim -E -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
 vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
 
 echo "alias vi='vim'" >> ~/.bashrc
@@ -61,9 +59,3 @@ echo "********************************"
 
 popd
 sudo rm -rf ~/vim
-
-rm -rf $GOPATH/bin/gocode
-ps aux | grep gocode-gomod | awk '{print $2}' | xargs kill -9
-ps aux | grep gocode | awk '{print $2}' | xargs kill -9
-go get -u github.com/stamblerre/gocode
-gocode close
