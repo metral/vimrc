@@ -36,7 +36,6 @@ set backspace=indent,eol,start
 set showmode
 set scrolloff=3
 set laststatus=2
-set splitright
 
 " These are annoying and I never use them anyway
 set nobackup
@@ -195,6 +194,7 @@ set completefunc=syntaxcomplete#Complete
 " automatically open and close the popup menu / preview window
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
+
 "set completeopt=menuone,menu
 
 " Syntastic
@@ -295,6 +295,15 @@ endif
 ""Bundle 'Valloric/YouCompleteMe'
 "filetype plugin indent on
 
+let g:ale_completion_enabled = 1
+let g:ale_sign_error = '!'
+let g:ale_sign_warning = '!'
+let g:ale_completion_enabled = 1
+let g:ale_set_highlights = 0
+let g:ale_echo_msg_format = '[%linter%] %s'
+let g:ale_sign_column_always = 1
+autocmd FileType typescript set omnifunc=ale#completion#OmniFunc
+
 let g:netrw_silent = 1
 set viminfo+=h
 
@@ -319,12 +328,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'w0rp/ale'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:ansible_attribute_highlight = "ob"
 let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
+"let g:tsuquyomi_use_vimproc=1
 
 "vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -361,7 +372,8 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 "           \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-let g:tsuquyomi_completion_detail = 1
+
+"let g:tsuquyomi_completion_detail = 1
 autocmd FileType typescript setlocal completeopt+=menu,preview
 set pumheight=10
 
