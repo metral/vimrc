@@ -18,6 +18,7 @@ set expandtab
 set smartindent
 set autoindent
 set showmatch
+set splitright
 syntax on
 
 set ruler
