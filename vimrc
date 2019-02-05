@@ -18,6 +18,7 @@ set expandtab
 set smartindent
 set autoindent
 set showmatch
+set splitbelow
 set splitright
 syntax on
 
@@ -449,6 +450,12 @@ runtime vim-unbundle/plugin/unbundle.vim
 au FileType go nmap <C-g>gs <Plug>(go-def-split)
 au FileType go nmap <C-g>gv <Plug>(go-def-vertical)
 au FileType go nmap <C-g>gt <Plug>(go-def-tab)
+
+au FileType typescript nmap <C-g>gd :ALEGoToDefinition<CR>
+au FileType typescript nmap <C-g>gs :ALEGoToDefinitionInSplit<CR>
+au FileType typescript nmap <C-g>gv :ALEGoToDefinitionInVSplit<CR>
+au FileType typescript nmap <C-g>gt :ALEGoToDefinitionInTab<CR>
+au FileType typescript nmap <C-g>gh :ALEDocumentation<CR>
 
 "settings for https://github.com/thaerkh/vim-workspace
 let g:workspace_autosave_untrailspaces = 0
