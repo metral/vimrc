@@ -306,6 +306,9 @@ let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_sign_column_always = 1
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 
+highlight Pmenu ctermbg=white ctermfg=black
+highlight PmenuSel ctermbg=green ctermfg=black
+
 let g:netrw_silent = 1
 set viminfo+=h
 
@@ -451,11 +454,11 @@ au FileType go nmap <C-g>gs <Plug>(go-def-split)
 au FileType go nmap <C-g>gv <Plug>(go-def-vertical)
 au FileType go nmap <C-g>gt <Plug>(go-def-tab)
 
-au FileType typescript nmap <C-g>gd :ALEGoToDefinition<CR>
-au FileType typescript nmap <C-g>gs :ALEGoToDefinitionInSplit<CR>
-au FileType typescript nmap <C-g>gv :ALEGoToDefinitionInVSplit<CR>
-au FileType typescript nmap <C-g>gt :ALEGoToDefinitionInTab<CR>
-au FileType typescript nmap <C-g>gh :ALEDocumentation<CR>
+au FileType typescript nmap <C-t>gd :ALEGoToDefinition<CR>
+au FileType typescript nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
+au FileType typescript nmap <C-t>gv :ALEGoToDefinitionInVSplit<CR>
+au FileType typescript nmap <C-t>gt :ALEGoToDefinitionInTab<CR>
+au FileType typescript nmap <C-t>gh :ALEDocumentation<CR>
 
 "settings for https://github.com/thaerkh/vim-workspace
 let g:workspace_autosave_untrailspaces = 0
