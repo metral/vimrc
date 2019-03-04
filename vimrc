@@ -396,7 +396,7 @@ let g:neocomplete#max_list = 15
 "let g:neocomplete#sources._ = ['buffer', 'member', 'tag', 'file', 'dictionary']
 "let g:neocomplete#sources.go = ['omni']
 
-set cmdheight=2
+set cmdheight=3
 setlocal omnifunc=go#code#Complete
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
