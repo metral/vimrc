@@ -459,6 +459,9 @@ au FileType typescript nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
 au FileType typescript nmap <C-t>gv :ALEGoToDefinitionInVSplit<CR>
 au FileType typescript nmap <C-t>gt :ALEGoToDefinitionInTab<CR>
 au FileType typescript nmap <C-t>gh :ALEDocumentation<CR>
+au FileType typescript nmap <C-t>le :lopen<CR>
+au FileType typescript nmap <C-t>ne :ALENext<CR>
+au FileType typescript nmap <C-t>pe :ALEPrevious<CR>
 
 "settings for https://github.com/thaerkh/vim-workspace
 let g:workspace_autosave_untrailspaces = 0
