@@ -298,12 +298,13 @@ endif
 "filetype plugin indent on
 
 let g:ale_completion_enabled = 1
-let g:ale_sign_error = '!'
+let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '!'
 let g:ale_completion_enabled = 1
 let g:ale_set_highlights = 0
 let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_sign_column_always = 1
+let g:go_auto_type_info = 1
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 
 highlight Pmenu ctermbg=white ctermfg=black
@@ -344,6 +345,7 @@ let g:ansible_extra_keywords_highlight = 1
 
 "vim-airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline_section_y='win: %{WindowNumber()}'
 
 "set statusline+=%{fugitive#statusline()}
@@ -352,12 +354,15 @@ autocmd bufwritepost .vimrc source $MYVIMRC
 
 "syntax-highlighting for Functions, Methods and Structs for golang vim-go
 let g:go_highlight_functions = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_structs = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_interfaces = 1
+let g:go_auto_sameids = 1
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = "/home/metral/go/bin"
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -453,6 +458,7 @@ runtime vim-unbundle/plugin/unbundle.vim
 au FileType go nmap <C-g>gs <Plug>(go-def-split)
 au FileType go nmap <C-g>gv <Plug>(go-def-vertical)
 au FileType go nmap <C-g>gt <Plug>(go-def-tab)
+au FileType go nmap <F6> :ALEHover<CR>
 
 au FileType typescript nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType typescript nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
@@ -462,6 +468,7 @@ au FileType typescript nmap <C-t>gh :ALEDocumentation<CR>
 au FileType typescript nmap <C-t>le :lopen<CR>
 au FileType typescript nmap <C-t>ne :ALENext<CR>
 au FileType typescript nmap <C-t>pe :ALEPrevious<CR>
+au FileType typescript nmap <F6> :ALEHover<CR>
 
 "settings for https://github.com/thaerkh/vim-workspace
 let g:workspace_autosave_untrailspaces = 0
