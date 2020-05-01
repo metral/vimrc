@@ -306,6 +306,9 @@ let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_sign_column_always = 1
 let g:go_auto_type_info = 1
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
+let g:ale_linters = {
+\   'go': ['golint', 'gopls', 'govet'],
+\}
 
 highlight Pmenu ctermbg=white ctermfg=black
 highlight PmenuSel ctermbg=green ctermfg=black
@@ -459,6 +462,7 @@ au FileType go nmap <C-g>gs <Plug>(go-def-split)
 au FileType go nmap <C-g>gv <Plug>(go-def-vertical)
 au FileType go nmap <C-g>gt <Plug>(go-def-tab)
 au FileType go nmap <F6> :ALEHover<CR>
+au FileType go nmap <C-t>gd :ALEGoToDefinition<CR>
 
 au FileType typescript nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType typescript nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
