@@ -1,4 +1,4 @@
-let $VIMRUNTIME = "/usr/share/vim/vim80"
+let $VIMRUNTIME = "/usr/share/vim/vim82"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
 execute pathogen#infect()
 filetype off
