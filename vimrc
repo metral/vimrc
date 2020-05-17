@@ -184,7 +184,7 @@ let g:miniBufExplModSelTarget = 1
 
 " Omnicomplete
 "set ofu=syntaxcomplete#Complete
-set completefunc=syntaxcomplete#Complete
+"set completefunc=syntaxcomplete#Complete
 "let OmniCpp_NamespaceSearch = 1
 "let OmniCpp_GlobalScopeSearch = 1
 "let OmniCpp_ShowAccess = 1
@@ -405,7 +405,7 @@ let g:neocomplete#max_list = 15
 "let g:neocomplete#sources.go = ['omni']
 
 set cmdheight=3
-setlocal omnifunc=go#code#Complete
+"setlocal omnifunc=go#code#Complete
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
