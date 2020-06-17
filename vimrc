@@ -306,8 +306,13 @@ let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_sign_column_always = 1
 let g:go_auto_type_info = 1
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType go set omnifunc=ale#completion#OmniFunc
 let g:ale_linters = {
 \   'go': ['golint', 'gopls', 'govet'],
+\   'python': ['flake8', 'pylint'],
+\}
+let g:ale_fixers = {
+\   'python': ['autopep8', 'yapf'],
 \}
 
 highlight Pmenu ctermbg=white ctermfg=black
@@ -463,6 +468,12 @@ au FileType go nmap <C-g>gv <Plug>(go-def-vertical)
 au FileType go nmap <C-g>gt <Plug>(go-def-tab)
 au FileType go nmap <F6> :ALEHover<CR>
 au FileType go nmap <C-t>gd :ALEGoToDefinition<CR>
+
+au FileType python nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
+au FileType python nmap <C-t>gv :ALEGoToDefinitionInVSplit<CR>
+au FileType python nmap <C-t>gt :ALEGoToDefinitionInTab<CR>
+au FileType python nmap <F6> :ALEHover<CR>
+au FileType python nmap <C-t>gd :ALEGoToDefinition<CR>
 
 au FileType typescript nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType typescript nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
