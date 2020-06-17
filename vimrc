@@ -304,6 +304,7 @@ let g:ale_completion_enabled = 1
 let g:ale_set_highlights = 0
 let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_sign_column_always = 1
+let g:ale_go_bingo_executable = 'gopls'
 let g:go_auto_type_info = 1
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType go set omnifunc=ale#completion#OmniFunc
