@@ -391,7 +391,7 @@ autocmd FileType typescript setlocal completeopt+=menu,preview
 set pumheight=10
 
 "let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 0
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#enable_auto_select = 0
@@ -458,11 +458,14 @@ nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 runtime vim-unbundle/plugin/unbundle.vim
 
 "By default the mapping gd is enabled, which opens the target identifier in current buffer. You can also open the definition/declaration, in a new vertical, horizontal, or tab, for the word under your cursor:
-au FileType go nmap <C-g>gs <Plug>(go-def-split)
-au FileType go nmap <C-g>gv <Plug>(go-def-vertical)
-au FileType go nmap <C-g>gt <Plug>(go-def-tab)
+au FileType go nmap <C-t>gs <Plug>(go-def-split)
+au FileType go nmap <C-t>gv <Plug>(go-def-vertical)
+au FileType go nmap <C-t>gt <Plug>(go-def-tab)
 au FileType go nmap <F6> :ALEHover<CR>
+au FileType go nmap <C-t>gh :ALEDocumentation<CR>
 au FileType go nmap <C-t>gd :ALEGoToDefinition<CR>
+au FileType go nmap <C-t>ne :ALENext<CR>
+au FileType go nmap <C-t>pe :ALEPrevious<CR>
 
 au FileType typescript nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType typescript nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
