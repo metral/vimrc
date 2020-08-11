@@ -304,10 +304,16 @@ let g:ale_completion_enabled = 1
 let g:ale_set_highlights = 0
 let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_sign_column_always = 1
+let g:ale_go_bingo_executable = 'gopls'
 let g:go_auto_type_info = 1
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType go set omnifunc=ale#completion#OmniFunc
 let g:ale_linters = {
 \   'go': ['golint', 'gopls', 'govet'],
+\   'python': ['flake8', 'pylint'],
+\}
+let g:ale_fixers = {
+\   'python': ['autopep8', 'yapf'],
 \}
 
 highlight Pmenu ctermbg=white ctermfg=black
@@ -458,24 +464,35 @@ nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 runtime vim-unbundle/plugin/unbundle.vim
 
 "By default the mapping gd is enabled, which opens the target identifier in current buffer. You can also open the definition/declaration, in a new vertical, horizontal, or tab, for the word under your cursor:
+au FileType go nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType go nmap <C-t>gs <Plug>(go-def-split)
 au FileType go nmap <C-t>gv <Plug>(go-def-vertical)
 au FileType go nmap <C-t>gt <Plug>(go-def-tab)
 au FileType go nmap <F6> :ALEHover<CR>
 au FileType go nmap <C-t>gh :ALEDocumentation<CR>
-au FileType go nmap <C-t>gd :ALEGoToDefinition<CR>
+au FileType go nmap <C-t>le :lopen<CR>
 au FileType go nmap <C-t>ne :ALENext<CR>
 au FileType go nmap <C-t>pe :ALEPrevious<CR>
+
+au FileType python nmap <C-t>gd :ALEGoToDefinition<CR>
+au FileType python nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
+au FileType python nmap <C-t>gv :ALEGoToDefinitionInVSplit<CR>
+au FileType python nmap <C-t>gt :ALEGoToDefinitionInTab<CR>
+au FileType python nmap <F6> :ALEHover<CR>
+au FileType python nmap <C-t>gh :ALEDocumentation<CR>
+au FileType python nmap <C-t>le :lopen<CR>
+au FileType python nmap <C-t>ne :ALENext<CR>
+au FileType python nmap <C-t>pe :ALEPrevious<CR>
 
 au FileType typescript nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType typescript nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
 au FileType typescript nmap <C-t>gv :ALEGoToDefinitionInVSplit<CR>
 au FileType typescript nmap <C-t>gt :ALEGoToDefinitionInTab<CR>
+au FileType typescript nmap <F6> :ALEHover<CR>
 au FileType typescript nmap <C-t>gh :ALEDocumentation<CR>
 au FileType typescript nmap <C-t>le :lopen<CR>
 au FileType typescript nmap <C-t>ne :ALENext<CR>
 au FileType typescript nmap <C-t>pe :ALEPrevious<CR>
-au FileType typescript nmap <F6> :ALEHover<CR>
 
 "settings for https://github.com/thaerkh/vim-workspace
 let g:workspace_autosave_untrailspaces = 0
