@@ -133,7 +133,7 @@ hi DiffDelete      ctermfg=16    ctermbg=52
 hi DiffText                      ctermbg=88    cterm=bold
 
 hi Directory       ctermfg=154                 cterm=bold
-hi Error           ctermfg=222   ctermbg=233
+hi Error           ctermfg=231   ctermbg=199   cterm=bold
 hi ErrorMsg        ctermfg=199   ctermbg=16    cterm=bold
 hi Exception       ctermfg=154                 cterm=bold
 hi Float           ctermfg=141
