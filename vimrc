@@ -1,4 +1,4 @@
-let $VIMRUNTIME = "/usr/share/vim/vim82"
+"let $VIMRUNTIME = "/usr/share/vim/vim82"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
 execute pathogen#infect()
 filetype off
@@ -58,7 +58,7 @@ endif
 
 
 map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-map <F2> :NERDTreeTabsToggle <cr>
+map <F2> :NERDTreeTabsToggle<cr>
 "map <F4> :NeoCompleteToggle<cr>
 map <F3> :Tagbar <cr>
 map <F4> :call ToggleIndent()<cr>
@@ -72,6 +72,7 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 35 
 let g:NERDTreeGlyphReadOnly = "RO"
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 "autocmd BufWinEnter * NERDTreeMirror
 "let g:nerdtree_tabs_open_on_console_startup=1
@@ -207,14 +208,17 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 let g:syntastic_enable_signs=1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list=1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 1
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
+
+"let g:syntastic_python_flake8_exec = 'python3'
+"let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 "let g:syntastic_go_checkers = ['go']
 "let g:syntastic_mode_map = {
@@ -309,14 +313,18 @@ let g:ale_go_bingo_executable = 'gopls'
 let g:go_auto_type_info = 1
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType go set omnifunc=ale#completion#OmniFunc
+"autocmd FileType python set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 let g:ale_linters = {
 \   'go': ['golint', 'gopls', 'govet'],
-\   'python': ['flake8', 'pylint'],
+\   'typescript': ['eslint', 'tsserver'],
+\   'python': ['mypy', 'flake8', 'pyls', 'pylint'],
 \}
 let g:ale_fixers = {
-\   'python': ['autopep8', 'yapf'],
+\   'python': ['nayvy#ale_fixer', 'autopep8', 'yapf'],
 \}
 
+"\   'python': ['mypy', 'pylint', 'flake8'],
+"\   'python': ['flake8', 'pylint'],
 highlight Pmenu ctermbg=white ctermfg=black
 highlight PmenuSel ctermbg=green ctermfg=black
 
@@ -344,7 +352,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
+Plugin 'relastle/vim-nayvy'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -375,7 +385,7 @@ let g:go_highlight_interfaces = 1
 let g:go_auto_sameids = 1
 let g:go_addtags_transform = "camelcase"
 let g:go_fmt_command = "goimports"
-let g:go_bin_path = "/home/metral/go/bin"
+let g:go_bin_path = "/Users/metral/go/bin"
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -467,9 +477,9 @@ runtime vim-unbundle/plugin/unbundle.vim
 
 "By default the mapping gd is enabled, which opens the target identifier in current buffer. You can also open the definition/declaration, in a new vertical, horizontal, or tab, for the word under your cursor:
 au FileType go nmap <C-t>gd :ALEGoToDefinition<CR>
-au FileType go nmap <C-t>gs <Plug>(go-def-split)
-au FileType go nmap <C-t>gv <Plug>(go-def-vertical)
-au FileType go nmap <C-t>gt <Plug>(go-def-tab)
+au FileType go nmap <C-t>gs :ALEGoToDefinition -split<CR>
+au FileType go nmap <C-t>gv :ALEGoToDefinition -vsplit<CR>
+au FileType go nmap <C-t>gt :ALEGoToDefinition -tab<CR>
 au FileType go nmap <F6> :ALEHover<CR>
 au FileType go nmap <C-t>gh :ALEDocumentation<CR>
 au FileType go nmap <C-t>le :lopen<CR>
@@ -477,9 +487,9 @@ au FileType go nmap <C-t>ne :ALENext<CR>
 au FileType go nmap <C-t>pe :ALEPrevious<CR>
 
 au FileType python nmap <C-t>gd :ALEGoToDefinition<CR>
-au FileType python nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
-au FileType python nmap <C-t>gv :ALEGoToDefinitionInVSplit<CR>
-au FileType python nmap <C-t>gt :ALEGoToDefinitionInTab<CR>
+au FileType python nmap <C-t>gs :ALEGoToDefinition -split<CR>
+au FileType python nmap <C-t>gv :ALEGoToDefinition -vsplit<CR>
+au FileType python nmap <C-t>gt :ALEGoToDefinition -tab<CR>
 au FileType python nmap <F6> :ALEHover<CR>
 au FileType python nmap <C-t>gh :ALEDocumentation<CR>
 au FileType python nmap <C-t>le :lopen<CR>
@@ -487,9 +497,9 @@ au FileType python nmap <C-t>ne :ALENext<CR>
 au FileType python nmap <C-t>pe :ALEPrevious<CR>
 
 au FileType typescript nmap <C-t>gd :ALEGoToDefinition<CR>
-au FileType typescript nmap <C-t>gs :ALEGoToDefinitionInSplit<CR>
-au FileType typescript nmap <C-t>gv :ALEGoToDefinitionInVSplit<CR>
-au FileType typescript nmap <C-t>gt :ALEGoToDefinitionInTab<CR>
+au FileType typescript nmap <C-t>gs :ALEGoToDefinition -split<CR>
+au FileType typescript nmap <C-t>gv :ALEGoToDefinition -vsplit<CR>
+au FileType typescript nmap <C-t>gt :ALEGoToDefinition -tab<CR>
 au FileType typescript nmap <F6> :ALEHover<CR>
 au FileType typescript nmap <C-t>gh :ALEDocumentation<CR>
 au FileType typescript nmap <C-t>le :lopen<CR>
