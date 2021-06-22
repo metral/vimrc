@@ -324,7 +324,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   'python': ['black'],
-\   'typescript': ['eslint'],
+\   'typescript': ['eslint', 'prettier'],
 \}
 
 "\   'python': ['mypy', 'pylint', 'flake8'],
