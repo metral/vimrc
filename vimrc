@@ -313,7 +313,7 @@ let g:ale_go_bingo_executable = 'gopls'
 let g:go_auto_type_info = 1
 let g:ale_fix_on_save = 1
 let g:ale_go_golangci_lint_options = "--max-issues-per-linter 0"
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all --tab-width 4 --use-tabs --print-width 120'
+let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4 --print-width 120'
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType go set omnifunc=ale#completion#OmniFunc
 
