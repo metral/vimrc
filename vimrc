@@ -318,7 +318,8 @@ let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4 --pr
 let g:ale_python_black_options='--line-length 120'
 let g:ale_python_flake8_options='--max-line-length 120'
 let g:ale_python_pylint_options='--max-line-length 120'
-let g:syntastic_python_pylint_post_args="--max-line-length=120"
+let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
+let g:syntastic_python_pylint_post_args='--ignore=E501,E128,E225'
 
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType go set omnifunc=ale#completion#OmniFunc
