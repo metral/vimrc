@@ -316,6 +316,8 @@ let g:ale_go_golangci_lint_options = "--max-issues-per-linter 0"
 let g:ale_go_golangci_lint_package = 1
 let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4 --print-width 120'
 let g:ale_python_black_options='--line-length 120'
+let g:ale_python_flake8_options='--max-line-length 120'
+let g:ale_python_pylint_options='--max-line-length 120'
 
 autocmd FileType typescript set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType go set omnifunc=ale#completion#OmniFunc
