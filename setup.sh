@@ -43,11 +43,6 @@ git submodule update
 
 ln -s ~/.vim/vimrc ~/.vimrc
 
-#pushd bundle/YouCompleteMe
-#git submodule update --init --recursive
-#./install.sh --clang-completer --gocode-completer
-#popd
-
 vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
 
 echo "alias vi='vim'" >> ~/.bashrc
