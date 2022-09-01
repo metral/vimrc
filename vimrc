@@ -313,6 +313,7 @@ let g:ale_go_bingo_executable = 'gopls'
 let g:go_auto_type_info = 1
 let g:ale_fix_on_save = 1
 "let g:ale_go_golangci_lint_options = "--max-issues-per-linter 0"
+let g:ale_go_golangci_lint_options = "-c $HOME/.vim/.golangci.yml"
 let g:ale_go_golangci_lint_package = 1
 let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4 --print-width 120'
 let g:ale_python_black_options='--line-length 120'
@@ -396,7 +397,8 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_interfaces = 1
 let g:go_auto_sameids = 1
 let g:go_addtags_transform = "camelcase"
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "gopls"
+let g:go_gopls_gofumpt=1
 let g:go_bin_path = "/Users/metral/go/bin"
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
