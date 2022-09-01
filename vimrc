@@ -213,7 +213,7 @@ let g:syntastic_enable_signs=1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 1
 
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['golangci-lint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 
@@ -312,7 +312,7 @@ let g:ale_sign_column_always = 1
 let g:ale_go_bingo_executable = 'gopls'
 let g:go_auto_type_info = 1
 let g:ale_fix_on_save = 1
-let g:ale_go_golangci_lint_options = "--max-issues-per-linter 0"
+"let g:ale_go_golangci_lint_options = "--max-issues-per-linter 0"
 let g:ale_go_golangci_lint_package = 1
 let g:ale_javascript_prettier_options = '--trailing-comma all --tab-width 4 --print-width 120'
 let g:ale_python_black_options='--line-length 120'
@@ -326,7 +326,7 @@ autocmd FileType go set omnifunc=ale#completion#OmniFunc
 
 "autocmd FileType python set omnifunc=ale#completion#OmniFunc shiftwidth=4 tabstop=4 softtabstop=4
 let g:ale_linters = {
-\   'go': ['golint', 'gopls', 'govet', 'golangci-lint'],
+\   'go': ['golangci-lint', 'gopls', 'govet'],
 \   'typescript': ['eslint', 'tsserver'],
 \   'python': ['mypy', 'flake8', 'pyls', 'pylint'],
 \}
