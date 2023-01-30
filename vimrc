@@ -399,7 +399,7 @@ let g:go_auto_sameids = 1
 let g:go_addtags_transform = "camelcase"
 let g:go_fmt_command = "gopls"
 let g:go_gopls_gofumpt=1
-let g:go_build_tags="linux, darwin"
+let g:go_build_tags="linux darwin"
 let g:go_bin_path = "/Users/metral/go/bin"
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
