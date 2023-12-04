@@ -14,3 +14,6 @@
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
     ignore = dirty
+[submodule "vim-unbundle"]
+	path = vim-unbundle
+	url = https://github.com/sunaku/vim-unbundle
