@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git reset --hard origin/master
+git pull
+
 git submodule update --remote --recursive
 
 git submodule foreach git pull origin master
