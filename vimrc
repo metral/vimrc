@@ -330,11 +330,13 @@ let g:ale_linters = {
 \   'go': ['golangci-lint', 'gopls', 'govet'],
 \   'typescript': ['eslint', 'tsserver'],
 \   'python': ['mypy', 'flake8', 'pyls', 'pylint'],
+\   'proto': ['buf-lint'],
 \}
 
 let g:ale_fixers = {
 \   'python': ['black'],
 \   'typescript': ['eslint', 'prettier'],
+\   'proto': ['buf-format'],
 \}
 
 "\   'python': ['mypy', 'pylint', 'flake8'],
