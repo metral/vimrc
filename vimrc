@@ -497,7 +497,7 @@ au FileType go nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType go nmap <C-t>gs :ALEGoToDefinition -split<CR>
 au FileType go nmap <C-t>gv :ALEGoToDefinition -vsplit<CR>
 au FileType go nmap <C-t>gt :ALEGoToDefinition -tab<CR>
-au FileType go nmap <F6> :ALEHover<CR>
+au FileType go nmap <C-t>h  :ALEHover<CR>
 au FileType go nmap <C-t>gh :ALEDocumentation<CR>
 au FileType go nmap <C-t>le :lopen<CR>
 au FileType go nmap <C-t>ne :ALENext<CR>
@@ -507,7 +507,7 @@ au FileType python nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType python nmap <C-t>gs :ALEGoToDefinition -split<CR>
 au FileType python nmap <C-t>gv :ALEGoToDefinition -vsplit<CR>
 au FileType python nmap <C-t>gt :ALEGoToDefinition -tab<CR>
-au FileType python nmap <F6> :ALEHover<CR>
+au FileType python nmap <C-t>h :ALEHover<CR>
 au FileType python nmap <C-t>gh :ALEDocumentation<CR>
 au FileType python nmap <C-t>le :lopen<CR>
 au FileType python nmap <C-t>ne :ALENext<CR>
@@ -517,7 +517,7 @@ au FileType typescript nmap <C-t>gd :ALEGoToDefinition<CR>
 au FileType typescript nmap <C-t>gs :ALEGoToDefinition -split<CR>
 au FileType typescript nmap <C-t>gv :ALEGoToDefinition -vsplit<CR>
 au FileType typescript nmap <C-t>gt :ALEGoToDefinition -tab<CR>
-au FileType typescript nmap <F6> :ALEHover<CR>
+au FileType typescript nmap <C-t>h :ALEHover<CR>
 au FileType typescript nmap <C-t>gh :ALEDocumentation<CR>
 au FileType typescript nmap <C-t>le :lopen<CR>
 au FileType typescript nmap <C-t>ne :ALENext<CR>
