@@ -7,6 +7,7 @@ set nocompatible
 set modelines=0
 syntax on
 set t_Co=256
+set term=xterm-256color
 
 set number
 set shiftwidth=4
