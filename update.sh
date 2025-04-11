@@ -13,3 +13,4 @@ git commit -m "Submodule sync"
 git push
 
 vim -E -u NONE -S ~/.vimrc +PluginInstall +GoInstallBinaries +GoUpdateBinaries +qall
+rm "$GOPATH/bin/golangci-lint"
